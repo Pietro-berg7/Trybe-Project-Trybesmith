@@ -1,9 +1,9 @@
 import { ResultSetHeader } from 'mysql2';
 import { ICreateProduct } from '../interfaces/IProducts';
-import conn from './connection';
+import connection from './connection';
 
 export default class ProductsModel {
-  private connection = conn;
+  private connection = connection;
 
   async createProduct(postObj: ICreateProduct) {
     const { name, amount } = postObj;
@@ -15,7 +15,7 @@ export default class ProductsModel {
     return insertId;
   }
 
-  async getAllProducts() {
+  async listProducts() {
     const query = 'SELECT * FROM Trybesmith.products';
     const [products] = await this.connection.execute(query);
     return products;

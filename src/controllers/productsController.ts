@@ -13,8 +13,8 @@ class ProductsController {
     res.status(201).json(newProduct);
   }
 
-  async getAllProducts(_req: Request, res: Response) {
-    const productsList = await this.service.getAllProducts();
+  async listProducts(_req: Request, res: Response) {
+    const productsList = await this.service.listProducts();
     res.status(200).json(productsList);
   }
 }

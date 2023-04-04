@@ -14,8 +14,8 @@ export default class ProductsService {
     return { id, name, amount };
   }
 
-  async getAllProducts() {
-    const productsList = await this.model.getAllProducts();
+  async listProducts() {
+    const productsList = await this.model.listProducts();
     return productsList;
   }
 }
