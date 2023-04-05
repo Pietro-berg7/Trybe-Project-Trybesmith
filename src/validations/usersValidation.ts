@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
-import { productSchema } from './schemas';
+import { userSchema } from './schemas';
 
-const productValidation = async (req: Request, res: Response, next: NextFunction) => {
+const userValidation = async (req: Request, res: Response, next: NextFunction) => {
   const input = req.body;
-  const { error } = productSchema.validate(input);
+  const { error } = userSchema.validate(input);
 
   if (!error) return next();
 
@@ -18,4 +18,4 @@ const productValidation = async (req: Request, res: Response, next: NextFunction
   next();
 };
 
-export default productValidation;
+export default userValidation;

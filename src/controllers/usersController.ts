@@ -10,6 +10,7 @@ class UsersController {
 
   async createUser(req: Request, res: Response) {
     const newUser = await this.service.createUser(req.body);
+    
     res.status(201).send(newUser);
   }
 }

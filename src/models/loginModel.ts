@@ -13,10 +13,8 @@ export default class LoginModel {
       WHERE username = ?
       AND password = ?
     `;
-    const [result] = await this.connection.execute(
-      query,
-      [username, password],
-    );
+    const [result] = await this.connection
+      .execute(query, [username, password]);
 
     return (result as RowDataPacket[])[0];
   }

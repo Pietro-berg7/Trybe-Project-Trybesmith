@@ -11,10 +11,9 @@ export default class UsersModel {
       INSERT INTO Trybesmith.users(username,vocation,level,password)
       VALUES(?,?,?,?);
     `;
-    const [{ insertId }] = await this.connection.execute<ResultSetHeader>(
-      query,
-      [username, vocation, level, password],
-    );
+    const [{ insertId }] = await this.connection
+      .execute<ResultSetHeader>(query, [username, vocation, level, password]);
+      
     return insertId;
   }
 }

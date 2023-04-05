@@ -10,6 +10,7 @@ class LoginController {
 
   async login(req: Request, res: Response) {
     const { status, response } = await this.service.login(req.body);
+    
     res.status(status).json(response);
   }
 }

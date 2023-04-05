@@ -10,11 +10,13 @@ class ProductsController {
 
   async createProduct(req: Request, res: Response) {
     const newProduct = await this.service.createProduct(req.body);
+
     res.status(201).json(newProduct);
   }
 
   async listProducts(_req: Request, res: Response) {
     const productsList = await this.service.listProducts();
+    
     res.status(200).json(productsList);
   }
 }

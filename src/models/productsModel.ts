@@ -11,13 +11,16 @@ export default class ProductsModel {
       INSERT INTO Trybesmith.products(name,amount)
       VALUES(?,?);
     `;
-    const [{ insertId }] = await this.connection.execute<ResultSetHeader>(query, [name, amount]);
+    const [{ insertId }] = await this.connection
+      .execute<ResultSetHeader>(query, [name, amount]);
+
     return insertId;
   }
 
   async listProducts() {
     const query = 'SELECT * FROM Trybesmith.products';
     const [products] = await this.connection.execute(query);
+    
     return products;
   }
 }
