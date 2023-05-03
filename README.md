@@ -1,4 +1,4 @@
-# Boas-vindas ao repositório do projeto Talker Manager!
+# Boas-vindas ao repositório do projeto Trybesmith!
 
 <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
